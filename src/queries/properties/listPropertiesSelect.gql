@@ -1,0 +1,24 @@
+query ListBuildings($after: String, $first: Int) {
+  buildings(after: $after, first: $first) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      node {
+        id
+        displayName
+        photos(limit:1)
+        pk
+        amenities {
+          edges {
+            node {
+              id
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+mutation CreateTaskCategory($name: String!) {
+  createTaskCategory(input: {name: $name}) {
+    category {
+      id
+    }
+  }
+}

@@ -1,0 +1,13 @@
+query ListTenants {
+  tenants{
+    edges {
+      node {
+        id
+        fullName
+        title
+        picture
+        pk
+      }
+    }
+  }
+}

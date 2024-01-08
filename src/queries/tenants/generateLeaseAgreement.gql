@@ -1,0 +1,9 @@
+mutation GenerateLeaseAgreement($id: ID!) {
+  generateLeaseAgreement(input: {id: $id}) {
+    document {
+      id
+      name
+      url
+    }
+  }
+}

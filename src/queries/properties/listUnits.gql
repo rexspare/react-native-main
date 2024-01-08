@@ -1,0 +1,27 @@
+#import "./unitCardFragment.gql"
+
+query ListUnits(
+  $after: String, $first: Int,
+  $bedroomCount: Float, $availabilityDate: Date, 
+  $building:Float, $priceMin: Float, 
+  $priceMax: Float, $status: Float,
+  $rentType: Float, $isFurnished: Boolean
+  ) {
+  units(
+    bedroomCount: $bedroomCount, availabilityDate: $availabilityDate, 
+    building: $building, priceMin: $priceMin, 
+    priceMax: $priceMax, status: $status
+    after: $after, first: $first,
+    rentType: $rentType, furnished: $isFurnished
+  ) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      node {
+        ...UnitCardFragment
+      }
+    }
+  }
+}

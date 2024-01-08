@@ -1,0 +1,5 @@
+mutation ReadNotifications {
+  readNotifications(input: {}) {
+    success
+  }
+}

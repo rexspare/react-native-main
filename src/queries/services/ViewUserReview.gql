@@ -1,0 +1,19 @@
+query ViewServiceProvider($serviceProviderId: ID!, $reviewer: ID!) {
+  serviceProviderRate(
+    serviceProviderId: $serviceProviderId
+    reviewer: $reviewer
+  ) {
+    edges {
+      node {
+        id
+        rank
+        text
+        reviewer {
+          id
+          fullName
+          picture
+        }
+      }
+    }
+  }
+}

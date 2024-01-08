@@ -1,0 +1,57 @@
+#import "./buildingCardFragment.gql"
+
+query GetUnit($id: ID!) {
+  unit(id: $id) {
+    id
+    unitNumber
+    description
+    status
+    photos
+    price
+    areaSize
+    bedroomCount
+    bathroomCount
+    vacancyDate
+    isFurnished
+    unitApplicationUrl
+    utilities
+    amenities {
+      edges {
+        node {
+          id
+          name
+        }
+      }
+    }
+    rentType
+    floor
+    activityFeed {
+      pk
+    }
+    tenants {
+      edges {
+        node {
+            id
+            fullName
+            picture
+            pk
+            leases {
+              edges {
+                node {
+                  id
+                  start
+                  end
+              }
+            }
+          }
+        }
+      }
+    }
+    building {
+      ...BuildingCardFragment
+    }
+    activityFeed{
+        pk
+    }
+  }
+}

@@ -1,0 +1,9 @@
+query Financials($query: String, $transactionType: Int, $paymentMethod: Int, $tenant: ID, $building: ID, $unit: ID, $dateMin: DateTime, $dateMax: DateTime ) {
+  financials(query: $query, transactionType: $transactionType, paymentMethod: $paymentMethod, tenant: $tenant, unit: $unit, dateMin: $dateMin, dateMax: $dateMax, building: $building){
+    totals{
+      total
+      totalIncome
+      totalExpense
+    }
+  }
+}

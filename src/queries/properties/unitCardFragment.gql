@@ -1,0 +1,8 @@
+fragment UnitCardFragment on UnitNode {
+  id
+  unitNumber
+  status
+  rentType
+  price
+  photos(limit: 1)
+}

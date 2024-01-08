@@ -1,0 +1,20 @@
+fragment TenantLeaseFragment on UnitTenantLeaseNode {
+  id
+  unit {
+    id
+    building {
+      id
+      displayName
+      address
+      fullAddress
+      photos(limit: 1)
+      managementTeam {
+        members {
+          id
+          pk
+        }
+      }
+    }
+    unitNumber
+  }
+}

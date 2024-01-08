@@ -1,0 +1,50 @@
+query GetAllComplaints(
+  $after: String
+  $first: Int
+  $source: String
+  $dateMin: Date
+  $dateMax: Date
+  $buildingIds: String
+  $unitIds: String
+  $status: String
+  $isOpen: Boolean
+) {
+  feed: allComplaints(
+    after: $after
+    first: $first
+    source: $source
+    dateMin: $dateMin
+    dateMax: $dateMax
+    buildingIds: $buildingIds
+    unitIds: $unitIds
+    status: $status
+    isOpen: $isOpen
+  ) {
+    pageInfo {
+      startCursor
+      endCursor
+      hasNextPage
+    }
+    edges {
+      node {
+        status
+        dispositionDate
+        issueDate
+        idInSupplier
+        inspectionDate
+        id
+        weblink
+        source
+        unit {
+          id
+          unitNumber
+        }
+        building {
+          photos(limit: 1)
+          displayName
+          pk
+        }
+      }
+    }
+  }
+}

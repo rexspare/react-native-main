@@ -1,0 +1,9 @@
+mutation upsertTenant($data: TenantDataInput!, $id: Int) {
+  upsertTenant(input: { data: $data, id: $id }){
+    tenant{
+      fullName
+      pk
+      picture
+    }
+  }
+}

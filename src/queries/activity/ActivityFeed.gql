@@ -1,0 +1,19 @@
+query GetActivities($feedId: Float, $building: Float, $after: String, $first: Int, $user: Float){
+    activities(feed: $feedId, building:$building, after: $after, first: $first, user: $user){
+        edges{
+          node{
+            id
+            text
+            actions
+            user {
+              fullName
+              picture
+            }
+            createdAt
+            feed{
+              pk
+            }
+          }
+        }
+      }
+}

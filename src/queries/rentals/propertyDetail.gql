@@ -1,0 +1,40 @@
+query PropertyDetail($id: ID!) {
+  building(id: $id) {
+    displayName
+    address
+    fullAddress
+    zip
+    floors
+    photos(limit: 5)
+    neighbourhood
+    city
+    units {
+      totalCount
+    }
+    owner {
+      fullName
+      id
+      picture
+    }
+    managementTeam {
+      members {
+        fullName
+        id
+        picture
+      }
+    }
+    managementCompany {
+      employees(first: 5) {
+        edges {
+          node {
+            id
+            ssn
+            fullName
+            picture
+            title
+          }
+        }
+      }
+    }
+  }
+}

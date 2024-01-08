@@ -1,0 +1,19 @@
+query ListDocumentTemplates(
+  $folder: DocumentTypeEnum!
+  $after: String
+  $first: Int
+) {
+  documentTemplates(templateFolder: $folder, after: $after, first: $first) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      node {
+        id
+        name
+        url
+      }
+    }
+  }
+}

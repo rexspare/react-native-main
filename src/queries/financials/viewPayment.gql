@@ -1,0 +1,34 @@
+query ViewPayment($id: ID!) {
+  payment(id: $id) {
+    id
+    amount
+    amountDue
+    amountPaid
+    paymentMethod
+    due
+    notes
+    payer {
+      picture
+      fullName
+    }
+    recipient {
+      picture
+      fullName
+    }
+    building {
+      id
+      address
+      name
+      photos(limit: 1)
+    }
+    unit {
+      id
+      unitNumber
+      photos(limit: 1)
+    }
+    lease {
+      metadata
+      id
+    }
+  }
+}

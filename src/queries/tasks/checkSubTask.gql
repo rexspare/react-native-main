@@ -1,0 +1,7 @@
+mutation CheckSubTask($taskId: ID!, $subTaskId: ID!, $checked: Boolean!) {
+  checkSubTask(
+    input: {taskId: $taskId, subTaskId: $subTaskId, checked: $checked}
+  ) {
+    success
+  }
+}

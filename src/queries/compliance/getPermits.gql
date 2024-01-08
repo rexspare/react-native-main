@@ -1,0 +1,47 @@
+query GetAllPermits(
+  $after: String
+  $first: Int
+  $source: String
+  $dateMin: Date
+  $dateMax: Date
+  $buildingIds: String
+  $unitIds: String
+  $status: String
+  $isOpen: Boolean
+) {
+  feed: allPermits(
+    after: $after
+    first: $first
+    source: $source
+    dateMin: $dateMin
+    dateMax: $dateMax
+    buildingIds: $buildingIds
+    unitIds: $unitIds
+    status: $status
+    isOpen: $isOpen
+  ) {
+    pageInfo {
+      startCursor
+      endCursor
+      hasNextPage
+    }
+    edges {
+      node {
+        id
+        idInSupplier
+        issueDate
+        source
+        unit {
+          id
+          unitNumber
+        }
+        building {
+          id
+          displayName
+          photos(limit: 1)
+          pk
+        }
+      }
+    }
+  }
+}

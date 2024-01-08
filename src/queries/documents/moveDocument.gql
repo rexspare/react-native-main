@@ -1,0 +1,7 @@
+mutation MoveDocument($id: ID!, $dest: ID) {
+  moveDocument(input: {id: $id, folderId: $dest}) {
+    document {
+      id
+    }
+  }
+}

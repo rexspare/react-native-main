@@ -1,0 +1,5 @@
+mutation SetServiceProviderPicture($picture: String!, $id: ID!) {
+  setServiceProviderPicture(input: {id: $id, picture: $picture}) {
+    success
+  }
+}

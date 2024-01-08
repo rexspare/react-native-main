@@ -1,0 +1,5 @@
+mutation ReviewTenant($id: ID!, $data: TenantReviewInput!) {
+  reviewTenant(input: {id: $id, data: $data}) {
+    success
+  }
+}

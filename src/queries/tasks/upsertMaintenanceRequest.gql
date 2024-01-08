@@ -1,0 +1,10 @@
+mutation UpsertMaintenanceRequest(
+  $id: ID
+  $requestData: MaintenanceRequestInput!
+) {
+  upsertMaintenanceRequest(input: {id: $id, requestData: $requestData}) {
+    maintenanceRequest {
+      id
+    }
+  }
+}

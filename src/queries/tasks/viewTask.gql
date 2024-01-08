@@ -1,0 +1,77 @@
+query ViewTask($id: ID!) {
+  task(id: $id) {
+    id
+    title
+    content
+    building {
+      id
+      displayName
+      address
+      city
+      state
+      zip
+    }
+    unit {
+      id
+      unitNumber
+    }
+    lease {
+      id
+      tenant {
+        id
+        fullName
+      }
+    }
+    category {
+      id
+      name
+    }
+    taskType
+    systemTask
+    status
+    priority
+    due
+    createdAt
+    activityFeed{
+      pk
+      activitySet{
+        edgeCount
+      }
+    }
+    reminder {
+      repeat
+      endRepeat
+    }
+    subTasks {
+      id
+      done
+      text
+    }
+    files {
+      id
+      fileType
+      url
+    }
+    assignees {
+      edges {
+        node {
+          id
+          fullName
+          picture
+          title
+        }
+      }
+    }
+    user {
+      id
+      fullName
+    }
+    maintenanceRequest {
+      id
+      location
+      enterPermission
+      additionalDetails
+      timePreference
+    }
+  }
+}

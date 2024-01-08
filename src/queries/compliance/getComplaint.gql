@@ -1,0 +1,22 @@
+query GetComplaintDetails($id: ID!) {
+  data: complaint(id: $id) {
+    status
+    source
+    dispositionDate
+    issueDate
+    idInSupplier
+    inspectionDate
+    weblink
+    unit {
+      unitNumber
+      id
+      pk
+    }
+    building {
+      fullAddress
+      displayName
+      pk
+      photos(limit: 1)
+    }
+  }
+}

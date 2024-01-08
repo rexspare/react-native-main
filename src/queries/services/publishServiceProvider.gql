@@ -1,0 +1,5 @@
+mutation PublishServiceProvider($id: ID!) {
+  publishServiceProvider(input: {id: $id}) {
+    success
+  }
+}

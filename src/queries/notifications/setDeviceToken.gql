@@ -1,0 +1,5 @@
+mutation SetDeviceToken($token: String!, $platform: String!) {
+  setDeviceToken(input: {token: $token, platform: $platform}) {
+    success
+  }
+}

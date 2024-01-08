@@ -1,0 +1,14 @@
+#import './notificationFragment.gql'
+query ListNotifications($after: String, $first: Int) {
+  notifications(after: $after, first: $first) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      node {
+        ...NotificationFragment
+      }
+    }
+  }
+}

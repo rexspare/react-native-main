@@ -1,0 +1,13 @@
+fragment BuildingCardFragment on BuildingNode {
+  id
+  displayName
+  address
+  city
+  state
+  zip
+  pk
+  photos(limit: 1)
+  vacantUnits: units(status: "2") {
+    edgeCount
+  }
+}

@@ -1,0 +1,5 @@
+mutation updateManagementTeam($building: Int!, $members: [Int]!) {
+  updateManagementTeam(input: { building: $building, members: $members }) {
+    clientMutationId
+  }
+}

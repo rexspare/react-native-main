@@ -1,0 +1,5 @@
+mutation SendNotice($id: Int!) {
+  sendNotice(input: {id: $id}) {
+    success
+  }
+}

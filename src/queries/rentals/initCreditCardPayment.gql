@@ -1,0 +1,6 @@
+mutation InitCreditCardPayment($input: InitCreditCardPaymentInput!) {
+  initCreditCardPayment(input: $input) {
+    success
+    submitUrl
+  }
+}

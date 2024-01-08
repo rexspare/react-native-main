@@ -1,0 +1,8 @@
+mutation AddManualExpense ($input: InputExpenseInput!){
+  addExpense(input: $input){
+    expense{
+      id
+      amount
+    }
+  }
+}

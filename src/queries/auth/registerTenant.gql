@@ -1,0 +1,29 @@
+#import "./userFragment.gql"
+
+mutation RegisterTenant(
+  $email: String!
+  $companyName: String!
+  $userType: String!
+  $phone: String!
+  $firstName: String!
+  $lastName: String!
+) {
+  registerTenant(
+    input: {
+      email: $email
+      userType: $userType
+      phone: $phone
+      companyName: $companyName
+      firstName: $firstName
+      lastName: $lastName
+    }
+  ) {
+    token
+    user {
+      ...userFragment
+      ...tenantFragment
+      ...landlordFragment
+      ...managementFragment
+    }
+  }
+}

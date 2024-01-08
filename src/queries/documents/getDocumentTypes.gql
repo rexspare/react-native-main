@@ -1,0 +1,9 @@
+query GetDocumentTypes {
+  __type(name: "DocumentTypeEnum") {
+    enumValues {
+      id: name
+      name
+      description
+    }
+  }
+}

@@ -1,0 +1,28 @@
+query ListTenants($search: String) {
+  leases(search: $search) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      node {
+        id
+        tenant {
+          id
+          pk
+          fullName
+          title
+          picture
+        }
+        unit {
+          id
+          unitNumber
+          building {
+            id
+            displayName
+          }
+        }
+      }
+    }
+  }
+}

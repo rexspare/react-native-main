@@ -1,0 +1,5 @@
+mutation removeManagerFromManagementTeam($building: Int!, $member: Int!) {
+  removeManager(input: { building: $building, member: $member }) {
+    clientMutationId
+  }
+}

@@ -1,0 +1,5 @@
+mutation GenerateTFACode($phone: String!) {
+  createTfaCode(input: {phone: $phone}) {
+    success
+  }
+}

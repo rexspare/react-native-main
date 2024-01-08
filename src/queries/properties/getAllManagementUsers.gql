@@ -1,0 +1,46 @@
+  query GetManagementCompanyEmployees {
+    managementUsers {
+      edges {
+        node {
+          id
+          pk
+          fullName
+          picture
+          userType
+          userTitle
+          phone
+          birthday
+          managementTeams{
+            building{
+              id
+              name
+              address
+              photos
+              units{
+                edges{
+                  node{
+                    id
+                    photos
+                    unitNumber
+                  }
+                }
+              }
+            }
+          }
+          managementCompany {
+            id
+          }
+          workHours {
+            day
+            start
+            end
+          }
+          workingDetails {
+            email
+            phone
+            address
+          }
+        }
+      }
+    }
+  }

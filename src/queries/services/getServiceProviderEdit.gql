@@ -1,0 +1,36 @@
+query GetServiceProviderEdit($id: ID!) {
+  serviceProvider(id: $id) {
+    id
+    firstName
+    lastName
+    phone
+    email
+    address
+    state
+    city
+    picture
+    specialty
+    public
+    occupation
+    phoneNumberOffice
+		companyName
+    website
+    waitingApproval
+    hours {
+      _id: day
+      day
+      start
+      end
+    }
+    serviceCategory {
+      id
+      name
+      isParent
+      parentCategory {
+        id
+        name
+        isParent
+      }
+    }
+  }
+}

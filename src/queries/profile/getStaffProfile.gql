@@ -1,0 +1,15 @@
+query GetProfile {
+ me { 
+    lastName
+    firstName
+    fullName
+    id
+    pk
+    email
+    address
+    userType
+    phone
+    birthday
+    picture
+  }
+}

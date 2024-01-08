@@ -1,0 +1,5 @@
+mutation RemoveDocument($id: ID!, $ignoreFullFolder: Boolean) {
+  removeDocument(input: {id: $id, ignoreFull: $ignoreFullFolder}) {
+    success
+  }
+}

@@ -1,0 +1,21 @@
+fragment userFragment on UserInterface {
+  id
+  email
+  userType
+  firstName
+  lastName
+  tfaRequired
+  fullName
+  picture
+  pk
+}
+
+fragment tenantFragment on TenantNode {
+  __typename
+}
+fragment landlordFragment on LandlordNode {
+  __typename
+}
+fragment managementFragment on ManagementUserNode {
+  __typename
+}

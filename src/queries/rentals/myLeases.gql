@@ -1,0 +1,15 @@
+#import './tenantLeaseFragment.gql'
+
+query myLeases {
+  me {
+    id
+    ... on TenantNode {
+        currentLease{
+          ...TenantLeaseFragment
+        }
+        latestLease{
+          ...TenantLeaseFragment
+        }
+    }
+  }
+}

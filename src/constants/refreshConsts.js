@@ -1,0 +1,2 @@
+export const TENANT_INFO_TAB = "TENANT_INFO_TAB";
+export const TENANT_PAYMENTS = "TENANT_PAYMENTS";

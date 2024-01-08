@@ -1,0 +1,7 @@
+query ListFolders {
+  folderTree {
+    id
+    path
+    name
+  }
+}

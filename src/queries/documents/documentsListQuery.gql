@@ -1,0 +1,43 @@
+query ListDocuments(
+  $isPersonal: Boolean
+  $after: String
+  $first: Int
+  $folder: ID
+  $search: String
+  $userId: Int
+  $welcomePackageDocuments: Boolean
+) {
+  documents(
+    isPersonal: $isPersonal
+    user: $userId
+    after: $after
+    first: $first
+    folder: $folder
+    search: $search
+    welcomePackageDocuments: $welcomePackageDocuments
+  ) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      node {
+        id
+        name
+        itemType
+        isBuildingDocument
+        folder {
+          id
+        }
+        ... on DocumentFileNode {
+          url
+        }
+        ... on DocumentFolderNode {
+          items {
+            edgeCount
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+query GetManagementTeamByBuilding($building: Int!) {
+  getManagementTeam(building: $building) {
+    members {
+      fullName
+      picture
+      userTitle
+      pk
+    }
+    company {
+      id
+    }
+    owner {
+      id
+    }
+  }
+}

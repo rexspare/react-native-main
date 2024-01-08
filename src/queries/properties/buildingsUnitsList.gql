@@ -1,0 +1,26 @@
+query BuildingsUnitsList {
+  buildings {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      node {
+        id
+        displayName
+        pk
+        units {
+            edges {
+                node {
+                  id
+                  displayUnitNumber
+                  status
+                  rentType
+                  price
+                }
+            }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+mutation SetTaskFiles($id: ID!, $files: [TaskFileInput]!) {
+  setTaskFiles(input: {id: $id, files: $files}) {
+    success
+  }
+}

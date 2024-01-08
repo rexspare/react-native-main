@@ -1,0 +1,23 @@
+query GetProfile {
+ me { 
+    id
+    pk
+    firstName
+    lastName
+    fullName
+    phone
+    email
+    picture
+    ... on TenantNode {
+    currentLease{
+      pk
+      id
+    }
+    latestLease{
+      pk 
+      id
+    }
+    }
+
+  }
+}

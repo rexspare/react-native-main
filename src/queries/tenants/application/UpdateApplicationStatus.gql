@@ -1,0 +1,5 @@
+mutation updateApplicationStatus($isApproved: Boolean!, $applicationId: Int!, $isDenied: Boolean) {
+  updateTenantApplicationStatus(input: {isApproved: $isApproved, applicationId: $applicationId, isDenied: $isDenied}) {
+    success
+  }
+}

@@ -1,0 +1,15 @@
+query ViewPayment($id: ID!) {
+  payment(id: $id) {
+    id
+    due
+    amount
+    lease {
+      id
+      metadata
+      unit {
+        id
+        photos(limit: 1)
+      }
+    }
+  }
+}

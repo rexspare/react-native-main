@@ -1,0 +1,26 @@
+query getNYCdata($staddr: String, $zip: Int) {
+  fetchBuildingData(zip: $zip, staddr: $staddr) {
+    bble
+    boro
+    block
+    lot
+    owner
+    bldgcl
+    taxclass
+    ltfront
+    ltdepth
+    fullval
+    avland
+    avtot
+    exland
+    extot
+    staddr
+    bldfront
+    blddepth
+    avland2
+    avtot2
+    period
+    year
+    valtype
+  }
+}

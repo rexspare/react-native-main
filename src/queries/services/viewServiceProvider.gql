@@ -1,0 +1,44 @@
+query ViewServiceProvider($id: ID!) {
+  serviceProvider(id: $id) {
+    id
+    pk
+    fullName
+    specialty
+    phone
+    email
+    address
+    city
+    state
+    picture
+    phoneNumberOffice
+    occupation
+    companyName
+    website
+    hours {
+      _id: day
+      day
+      start
+      end
+    }
+    public
+    waitingApproval
+    rank
+    creator {
+      id
+    }
+    topReviews(first: 4) {
+      edges {
+        node {
+          id
+          rank
+          text
+          reviewer {
+            id
+            fullName
+            picture
+          }
+        }
+      }
+    }
+  }
+}

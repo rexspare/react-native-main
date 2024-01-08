@@ -1,0 +1,7 @@
+mutation CreateFolder($name: String!, $folder: ID) {
+  createFolder(input: {name: $name, folderId: $folder}) {
+    folder {
+      id
+    }
+  }
+}

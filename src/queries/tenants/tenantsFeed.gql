@@ -1,0 +1,57 @@
+query tenants($isApproved: Boolean, $isArchived: Boolean , $isCurrent: Boolean , $isProspective: Boolean , $isPast: Boolean, $buildingId: Float) {
+  tenants(isApproved: $isApproved , isArchived: $isArchived, isCurrent: $isCurrent , isProspective:$isProspective , isPast: $isPast, buildingId: $buildingId, orderByUnit: true ) {
+    edges {
+      node {
+        fullName
+        title
+        id
+        pk
+        prospectiveLease {
+          id
+          unit {
+            unitNumber
+          }
+          application {
+            pk
+          }
+        }
+        pastLease {
+          id
+          unit {
+            unitNumber
+            building {
+              name
+            }
+          }
+        }
+        approvedLease {
+          id
+          unit {
+            unitNumber
+          }
+        }
+        currentLease {
+          id
+          unit {
+            unitNumber
+          }
+        }
+        archivedLease {
+          id
+          unit {
+            unitNumber
+          }
+          
+          application {
+            pk
+          }
+        }
+        picture
+        receivedReviews {
+          edgeCount
+        }
+        averageScore
+      }
+    }
+  }
+}

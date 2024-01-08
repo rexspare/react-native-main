@@ -1,0 +1,6 @@
+export const TAB_ENUM = {
+    START_DATE: 'START_DATE',
+    START_TIME: 'START_TIME',
+    END_DATE: 'END_DATE',
+    END_TIME: 'END_TIME',
+}

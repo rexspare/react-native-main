@@ -1,0 +1,5 @@
+mutation VerifyTFACode($code: String!) {
+  verifyTfaCode(input: {code: $code}) {
+    verified
+  }
+}

@@ -1,0 +1,14 @@
+query GetManagementCompanies($after: String, $first: Int, $filter: String) {
+  managementCompanies(after: $after, first: $first, name_Icontains: $filter) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      node {
+        id
+        name
+      }
+    }
+  }
+}

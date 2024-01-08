@@ -1,0 +1,9 @@
+query GetEmergencyContact {
+  me {
+    id
+    ... on TenantNode {
+      emergencyContact
+      emergencyContactPhone
+    }
+  }
+}

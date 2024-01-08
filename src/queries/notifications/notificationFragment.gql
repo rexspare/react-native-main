@@ -1,0 +1,167 @@
+fragment NotificationFragment on NotificationInterface {
+  id
+  title
+  body
+  unread
+  notificationType
+  createdAt
+  timestamp
+  ... on TaskNotificationType {
+    task {
+      id
+      title
+    }
+  }
+  ... on EventNotificationType {
+    event {
+      id
+      title
+    }
+  }
+  ... on EventAssignmentNotificationType {
+    event {
+      id
+      title
+    }
+    user {
+      id
+      fullName
+    }
+  }
+  ... on TaskStatusNotificationType {
+    task {
+      id
+      title
+    }
+    user {
+      id
+      fullName
+    }
+  }
+  ... on TaskAssignmentNotificationType {
+    task {
+      id
+      title
+    }
+    user {
+      id
+      fullName
+    }
+  }
+  ... on TenantLeaseReplyNotificationType {
+    lease {
+      id
+      unit {
+        id
+        unitNumber
+      }
+      tenant {
+        id
+        fullName
+      }
+    }
+  }
+  ... on AssignUnitTenantNotificationType {
+    lease {
+      id
+      unit {
+        id
+        unitNumber
+      }
+      tenant {
+        id
+        fullName
+      }
+    }
+  }
+  ... on AssignBuildingManagerNotificationType {
+    building {
+      id
+      displayName
+    }
+    manager {
+      id
+      email
+    }
+  }
+  ... on MaintenanceRequestNotificationType {
+    task {
+      id
+      title
+    }
+    user {
+      id
+      fullName
+    }
+  }
+  ... on LeaseSignedNotificationType {
+    lease {
+      id
+      unit {
+        id
+        unitNumber
+      }
+      tenant {
+        id
+        fullName
+      }
+    }
+  }
+  ... on LeaseRenewalNotificationType {
+    task {
+      id
+      title
+    }
+    lease {
+      id
+      unit {
+        id
+        unitNumber
+      }
+      tenant {
+        id
+        fullName
+      }
+    }
+  }
+  ... on CollectRentNotificationType {
+    task {
+      id
+      title
+    }
+    payment {
+      id
+      lease {
+        id
+        unit {
+          id
+          unitNumber
+        }
+        tenant {
+          id
+          fullName
+        }
+      }
+    }
+  }
+  ... on ApprovePaymentNotificationType {
+    task {
+      id
+      title
+    }
+    payment {
+      id
+      lease {
+        id
+        unit {
+          id
+          unitNumber
+        }
+        tenant {
+          id
+          fullName
+        }
+      }
+    }
+  }
+}

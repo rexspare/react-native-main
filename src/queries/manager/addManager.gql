@@ -1,0 +1,41 @@
+mutation createManager($data: UserProfileInput!, $attachments: [Upload]!, $permissions: UserPermissionsInput!) {
+	addTeamMember(input: { userData: $data, attachments: $attachments, permissions: $permissions}) {
+		manager {
+			lastName
+			firstName
+			fullName
+			id
+			pk
+			email
+			address
+			userType
+			managementCompany {
+				name
+			}
+			phone
+			birthday
+			picture
+			title
+			workHours {
+				day	
+				start
+				end
+			}
+			buildings {
+				edges {
+					node {
+						address
+						state
+						zip
+						id
+					}
+				}
+			}
+			workingDetails {
+				email
+				phone
+				address
+			}
+		}
+	}
+}

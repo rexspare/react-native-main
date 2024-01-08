@@ -1,0 +1,7 @@
+mutation UpsertBuilding($isAutomatedData: Boolean, $automatedData: NYCdataInput, $building: BuildingInput!, $id: ID) {
+  upsertBuilding(input: {id: $id, buildingData: $building, automatedData: $automatedData, isAutomatedData: $isAutomatedData}) {
+    building {
+      id
+    }
+  }
+}

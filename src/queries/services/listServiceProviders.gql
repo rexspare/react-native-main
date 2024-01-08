@@ -1,0 +1,27 @@
+#import './serviceProviderCardFragment.gql'
+
+query ListServiceProviders(
+  $parentCategory: ID
+  $public: Boolean
+  $after: String
+  $first: Int
+  $search: String
+) {
+  serviceProviders(
+    serviceCategory_Id: $parentCategory
+    public: $public
+    after: $after
+    first: $first
+    search: $search
+  ) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      node {
+        ...ServiceProviderCardFragment
+      }
+    }
+  }
+}

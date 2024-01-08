@@ -1,0 +1,5 @@
+mutation sendLease ($id: Int!){
+  sendLease(input: {leaseId: $id }){
+    success
+  }
+}

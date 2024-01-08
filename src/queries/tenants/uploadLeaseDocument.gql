@@ -1,0 +1,9 @@
+mutation UploadLeaseDocument($id: ID!, $document: Upload!, $isPrivate: Boolean) {
+  uploadLeaseDocument(input: {id: $id, file: $document, isPrivate: $isPrivate}) {
+    document {
+      id
+      name
+      url
+    }
+  }
+}

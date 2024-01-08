@@ -1,0 +1,24 @@
+query GetMonthGraph(
+  $year: Int!
+  $month: Int!
+  $type: Int
+  $building: ID
+  $unit: ID
+) {
+  transactionMonthGraph(
+    year: $year
+    month: $month
+    transactionType: $type
+    building: $building
+    unit: $unit
+  ) {
+    id
+    date
+    value
+    accValue
+    name
+    year
+    month
+    day
+  }
+}

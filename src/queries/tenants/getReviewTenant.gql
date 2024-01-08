@@ -1,0 +1,48 @@
+query GetReviewTenant(
+  $id: ID!
+){
+  tenantReview(id: $id){
+   id
+    comment
+    score
+    reviewerScore
+    tenancyYears
+    reviewer{
+      id
+      email
+      firstName
+      lastName
+      fullName
+      picture
+      title
+    }
+    tenant{
+      email
+      phone
+      firstName
+      lastName
+      picture
+    }
+    paymentSection{
+      paysRent
+    }
+    leaseSection{
+      compliesToTerms
+    }
+     maintenanceSection{
+      makesLegitimateRequests
+    }
+    complaintsSection{
+      filesFormalComplaints
+      historyOfFiling
+      areComplaintsLegitimate
+      providesAccess
+    }
+    damagesSection{
+      damagesBuilding
+    }
+    behaviourSection{
+      courtProceedingsSettlements
+    }
+  }
+}

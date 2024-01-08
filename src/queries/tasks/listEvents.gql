@@ -1,0 +1,50 @@
+query ListEvents(
+  $after: String
+  $first: Int
+  $start: DateTime!
+  $end: DateTime!
+) {
+  eventOccurrences(start: $start, end: $end, after: $after, first: $first) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      node {
+        id
+        date
+        taskEvent {
+          id
+          title
+          due
+          taskType
+          building {
+            id
+            displayName
+          }
+          unit {
+            id
+            unitNumber
+          }
+        }
+        event {
+          id
+          title
+          date
+          startTime
+          endTime
+          location
+          allDay
+          building {
+            id
+            displayName
+          }
+          unit {
+            id
+            unitNumber
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+#import './notificationFragment.gql'
+query ListLeaseNotifications($after: String, $first: Int, $id: ID!) {
+  leaseNotifications(id: $id, after: $after, first: $first) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      node {
+        ...NotificationFragment
+      }
+    }
+  }
+}

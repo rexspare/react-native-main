@@ -1,0 +1,25 @@
+query GetViolationDetails($id: ID!) {
+  data: violation(id: $id) {
+    status
+    source
+    idInSupplier
+    weblink
+    issueDate
+    price
+    building {
+      fullAddress
+      pk
+      id
+      displayName
+      address
+      photos(limit: 1)
+    }
+    unit {
+      unitNumber
+      id
+      pk
+    }
+    severity
+    description
+  }
+}

@@ -1,0 +1,15 @@
+#import './serviceCategoryCardFragment.gql'
+
+query ListMostUsedServiceCategories($first: Int) {
+  mostUsedServiceCategories(first: $first) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      node {
+        ...ServiceCategoryCardFragment
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+query ListTenantPayments(
+  $after: String
+  $first: Int
+  $isPaid: Boolean
+  $orderBy: String = "due"
+) {
+  payments(after: $after, first: $first, orderBy: $orderBy, isPaid: $isPaid) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      node {
+        id
+        due
+        amount
+        amountPaid
+        amountDue
+        notes
+        latestPayment
+        paymentMethod
+        lease {
+          id
+          unit {
+            id
+            unitNumber
+            building {
+              fullAddress
+              name
+              address
+              state
+              city
+              zip
+            }
+          }
+        }
+      }
+    }
+  }
+}

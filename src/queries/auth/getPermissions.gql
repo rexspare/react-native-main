@@ -1,0 +1,40 @@
+query getPermissions {
+  me {
+    userPermissions {
+      tenants {
+        create
+        view
+        edit
+      }
+      financials {
+        create
+        view
+        edit
+      }
+      tasks {
+        create
+        view
+        edit
+      }
+      profile {
+        create
+        view
+        edit
+      }
+      properties {
+        create
+        view
+        edit
+      }
+      tenants {
+        create
+        view
+        edit
+      }
+      messaging {
+        tenants
+        teamMembers
+      }
+    }
+  }
+}

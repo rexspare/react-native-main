@@ -1,0 +1,14 @@
+fragment TaskItemFragment on TaskNode {
+  id
+  title
+  due
+  systemTask
+  taskType
+  building {
+    address
+  }
+  otherUsers(limit: 3) {
+    id
+    picture
+  }
+}

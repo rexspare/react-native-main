@@ -1,0 +1,20 @@
+query GetAmenities(
+  $filter: String
+  $type: String
+) {
+  amenities(
+    name_Icontains: $filter
+    amenityType: $type
+  ) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      node {
+        id
+        name
+      }
+    }
+  }
+}

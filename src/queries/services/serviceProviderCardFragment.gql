@@ -1,0 +1,9 @@
+fragment ServiceProviderCardFragment on ServiceProviderNode {
+  id
+  fullName
+  specialty
+  picture
+  rank
+  email
+  phone
+}

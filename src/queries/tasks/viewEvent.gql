@@ -1,0 +1,38 @@
+query ViewEvent($id: ID!) {
+  event(id: $id) {
+    id
+    title
+    content
+    building {
+      id
+      displayName
+    }
+    unit {
+      id
+      unitNumber
+    }
+    date
+    createdAt
+    startTime
+    endTime
+    allDay
+    repeat
+    location
+    endRepeat
+    alert
+    assignees {
+      edges {
+        node {
+          id
+          fullName
+          picture
+          title
+        }
+      }
+    }
+    user {
+      id
+      fullName
+    }
+  }
+}

@@ -1,0 +1,25 @@
+query ListTenantReviews($id: ID!, $after: String, $first: Int) {
+  lease(id: $id) {
+    id
+    tenant {
+      id
+      receivedReviews(after: $after, first: $first) {
+        pageInfo {
+          endCursor
+          hasNextPage
+        }
+        edges {
+          node {
+            id
+            comment
+            reviewer {
+              id
+              fullName
+              picture
+            }
+          }
+        }
+      }
+    }
+  }
+}

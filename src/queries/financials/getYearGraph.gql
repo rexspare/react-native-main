@@ -1,0 +1,13 @@
+query GetYearGraph($year: Int!, $type: Int, $building: ID, $unit: ID) {
+  transactionYearGraph(
+    year: $year
+    transactionType: $type
+    building: $building
+    unit: $unit
+  ) {
+    id
+    year
+    month
+    accValue
+  }
+}

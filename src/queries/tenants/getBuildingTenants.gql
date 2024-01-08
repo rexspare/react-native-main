@@ -1,0 +1,31 @@
+query getBuildingTenants(
+  $id: ID!
+  $leaseState: LeaseStateEnum
+  $after: String
+  $first: Int
+) {
+  building(id: $id) {
+    id
+    leases(leaseState: $leaseState, after: $after, first: $first) {
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+      edges {
+        node {
+          id
+          tenant {
+            id
+            fullName
+            title
+            picture
+          }
+          unit {
+            id
+            unitNumber
+          }
+        }
+      }
+    }
+  }
+}

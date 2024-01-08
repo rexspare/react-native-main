@@ -1,0 +1,9 @@
+fragment ServiceCategoryCardFragment on ServiceCategoryNode {
+  id
+  name
+  picture
+  isParent
+  serviceProviders {
+    edgeCount
+  }
+}

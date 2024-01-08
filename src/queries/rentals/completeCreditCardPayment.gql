@@ -1,0 +1,22 @@
+mutation CompleteCreditCardPayment($input: CompleteCreditCardPaymentInput!) {
+  completeCreditCardPayment(input: $input) {
+    payment {
+      id
+      due
+      amount
+      amountPaid
+      amountDue
+      latestPayment
+      lease {
+        id
+        unit {
+          id
+          photos(limit: 1)
+          building {
+            fullAddress
+          }
+        }
+      }
+    }
+  }
+}

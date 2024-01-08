@@ -1,0 +1,7 @@
+mutation RenameDocument($name: String!, $id: ID!) {
+  renameDocument(input: {id: $id, name: $name}) {
+    document {
+      id
+    }
+  }
+}

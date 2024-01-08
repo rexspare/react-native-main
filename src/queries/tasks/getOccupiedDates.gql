@@ -1,0 +1,3 @@
+query GetOccupiedDates($start: DateTime!, $end: DateTime!) {
+  occupiedDates(start: $start, end: $end)
+}

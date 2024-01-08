@@ -1,0 +1,27 @@
+#import "./buildingCardFragment.gql"
+
+query ListBuildings(
+  $after: String, $first: Int, 
+  $search: String, $unitStatus: String, 
+  $buildingsIn: String, $propertyType: Float, 
+  $unitRegulationStatus: String, $minUnits: Float, 
+  $maxUnits: Float
+  ) {
+  buildings(
+    after: $after, first: $first, 
+    search: $search, buildingsIn: $buildingsIn, 
+    unitStatus: $unitStatus, propertyType: $propertyType, 
+    unitRegulationStatus: $unitRegulationStatus, minUnits: $minUnits,
+    maxUnits: $maxUnits
+    ) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      node {
+        ...BuildingCardFragment
+      }
+    }
+  }
+}

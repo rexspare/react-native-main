@@ -1,0 +1,7 @@
+mutation AddManualPayment($input: AddManualPaymentInput!) {
+  addManualPayment(input: $input) {
+    transaction {
+      id
+    }
+  }
+}

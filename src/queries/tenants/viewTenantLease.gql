@@ -1,0 +1,62 @@
+#import "./viewTenantTabsFragments.gql"
+
+query GetTenantLease(
+  $id: ID!
+  $tenantTab: Boolean!
+  $unitTab: Boolean!
+  $documentsTab: Boolean!
+  $activityTab: Boolean!
+) {
+  lease(id: $id) {
+    id
+    pk
+    status
+    detailsFilled
+    leaseSigned
+    leaseSent
+    paymentMethods
+    application {
+      pk
+    }
+    tenant {
+      id
+      pk
+      firstName
+      lastName
+      fullName
+      email
+      phone
+      workPhone
+      birthday
+      emergencyContact
+      emergencyContactPhone
+      drivingLicense
+      passport
+      occupation
+      ssn
+      picture
+      averageScore
+      invitationSent
+      referees{
+        edges{
+          node{
+            id
+            phone
+            name
+            address
+          }
+        }
+      }
+      activityFeed{
+        pk
+      }
+      receivedReviews {
+        edgeCount
+      }
+    }
+    ...GetTenantLeaseTenantTab @include(if: $tenantTab)
+    ...GetTenantLeaseUnitTab @include(if: $unitTab)
+    ...GetTenantLeaseDocumentsTab @include(if: $documentsTab)
+    ...GetTenantLeaseActivityTab @include(if: $activityTab)
+  }
+}

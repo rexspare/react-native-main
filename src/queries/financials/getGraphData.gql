@@ -1,0 +1,33 @@
+query($building: Int, $unit: Int, $start: Date, $end: Date, $isPaid: Boolean) {
+  financialsGraphData(
+    building: $building
+    unit: $unit
+    start: $start
+    end: $end
+    isPaid: $isPaid
+  ) {
+    financialData {
+      building
+      totals {
+        incoming
+        outgoing
+      }
+      months {
+        incoming
+        outgoing
+        month
+      }
+    }
+    summary {
+      totals {
+        incoming
+        outgoing
+      }
+      months {
+        incoming
+        outgoing
+        month
+      }
+    }
+  }
+}

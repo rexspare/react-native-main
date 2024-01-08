@@ -1,0 +1,7 @@
+mutation CreateManagementTeam($name: String, $memberIds: [ID]) {
+  createManagementTeam(name: $name, memberIds: $memberIds) {
+    team {
+      id
+    }
+  }
+}

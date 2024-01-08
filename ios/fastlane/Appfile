@@ -1,0 +1,8 @@
+app_identifier("com.tigra.tigra") # The bundle identifier of your app
+apple_id("gaby@genesislabs.io") # Your Apple Developer Portal username
+
+itc_team_id("125249396") # App Store Connect Team ID
+team_id("DYZK2X8RJR") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

@@ -1,0 +1,23 @@
+query ListPaymentHistory($after: String, $first: Int) {
+  payments(after: $after, first: $first, status: "3") {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      node {
+        id
+        amount
+        # status
+        paidAt
+        approvedAt
+        due
+        transaction {
+          id
+          paymentForm
+          name
+        }
+      }
+    }
+  }
+}

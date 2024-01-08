@@ -1,0 +1,27 @@
+#import './serviceCategoryCardFragment.gql'
+
+query ListServiceCategories(
+  $isRoot: Boolean
+  $parentCategory: ID
+  $after: String
+  $first: Int
+  $filter: String
+) {
+  serviceCategories(
+    isRoot: $isRoot
+    parentCategory_Id: $parentCategory
+    after: $after
+    first: $first
+    name_Icontains: $filter
+  ) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      node {
+        ...ServiceCategoryCardFragment
+      }
+    }
+  }
+}

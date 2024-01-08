@@ -1,0 +1,6 @@
+
+mutation amenity($input: AddAmenityInput!) {
+  addAmenity(input:$input ){
+    success
+  }
+}

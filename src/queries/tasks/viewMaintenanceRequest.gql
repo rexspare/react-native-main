@@ -1,0 +1,53 @@
+query ViewMaintenanceRequest($id: ID!) {
+  maintenanceRequest(id: $id) {
+    id
+    task {
+      id
+      title
+      content
+      priority
+      files {
+        id
+        fileType
+        url
+      }
+      building {
+        id
+        displayName
+      }
+      unit {
+        id
+        unitNumber
+        owner {
+          id
+          phone
+        }
+      }
+      createdAt
+      assignees {
+        edges {
+          node {
+            id
+            fullName
+            picture
+            title
+          }
+        }
+      }
+      user {
+        id
+        fullName
+      }
+      activityFeed{
+        pk
+      }
+    }
+    location
+    enterPermission
+    additionalDetails
+    timePreference
+    service
+    status
+    date
+  }
+}

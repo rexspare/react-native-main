@@ -1,0 +1,78 @@
+query payments(
+  $isPaid: Boolean
+  $isOverdue: Boolean
+  $isOutgoing: Boolean
+  $isIncoming: Boolean
+  $dateMin: Date
+  $dateMax: Date
+  $paymentMethod: String
+  $payer: Float
+  $unit: Float
+  $building: Float
+  $recipient: Float
+) {
+  payments(
+    isPaid: $isPaid
+    isOverdue: $isOverdue
+    isOutgoing: $isOutgoing
+    isIncoming: $isIncoming
+    dateMin: $dateMin
+    dateMax: $dateMax
+    paymentMethod: $paymentMethod
+    payer: $payer
+    unit: $unit
+    building: $building
+    recipient: $recipient
+  ) {
+    pageInfo {
+      startCursor
+      endCursor
+      hasNextPage
+    }
+    edges {
+      node {
+        amount
+        amountPaid
+        amountDue
+        due
+        id
+        notes
+        paymentMethod
+        latestPayment
+        unit {
+          unitNumber
+          pk
+          photos(limit: 1)
+        }
+        building {
+          photos(limit: 1)
+          pk
+          address
+        }
+        payer {
+          id
+          pk
+          fullName
+          picture
+        }
+        recipient {
+          id
+          pk
+          fullName
+          picture
+        }
+        lease {
+          pk
+          notices(limit: 1) {
+            edges {
+              node {
+                id
+                dateSent
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

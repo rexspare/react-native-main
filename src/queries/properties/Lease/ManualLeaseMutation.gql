@@ -1,0 +1,39 @@
+mutation manualLease(
+  $id: Int
+  $unitId: Int!
+  $tenantId: Int!
+  $rentDay: Int!
+  $rentAmount: Float!
+  $start: Date
+  $end: Date
+  $documents: [Upload]
+  $securityDeposit: Float
+  $application: UnitApplicationInput
+  $paymentMethods: [String]
+) {
+  manualUploadLease(
+    input: {
+      id: $id
+      unitId: $unitId
+      tenantId: $tenantId
+      rentDay: $rentDay
+      rentAmount: $rentAmount
+      start: $start
+      end: $end
+      documents: $documents
+      securityDeposit: $securityDeposit
+      application: $application
+      paymentMethods: $paymentMethods
+    }
+  ) {
+    lease {
+      id
+      pk
+      rentAmount
+      leasePeriod
+      tenant {
+        id
+      }
+    }
+  }
+}

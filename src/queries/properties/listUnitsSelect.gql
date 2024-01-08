@@ -1,0 +1,17 @@
+query ListUnitsSelect($buildingId: Float, $buildingIds: String,  $after: String, $first: Int) {
+  units(building: $buildingId, after: $after, first: $first, buildingIds: $buildingIds ) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      node {
+        id
+        pk
+        unitNumber
+        price
+        photos(limit: 1)
+      }
+    }
+  }
+}

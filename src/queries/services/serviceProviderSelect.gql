@@ -1,0 +1,13 @@
+query ListServiceProvide($serviceId: ID, $serviceName: String) {
+  serviceProviders(serviceCategory_Id: $serviceId, serviceCategory_Name_Icontains: $serviceName){
+    edges {
+      node {
+        id
+        fullName
+        picture
+        specialty
+        pk
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+export const t = (condition, jsx, r = null) =>  condition ? jsx : r;

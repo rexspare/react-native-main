@@ -1,0 +1,75 @@
+#import "../auth/permissionsFragment.gql"
+query GetProfile {
+ me { 
+    id
+    pk
+    firstName
+    lastName
+    fullName
+    phone
+    email
+    picture
+    ... on TenantNode {
+    currentLease{
+      pk
+      id
+    }
+    latestLease{
+      pk 
+      id
+    }
+    }
+  userPermissions {
+      tenants {
+          create
+          view
+          edit
+          isHidden
+      }
+      financials {
+          create
+          view
+          edit
+          isHidden
+      }
+      tasks {
+          create
+          view
+          edit
+          isHidden
+      }
+      profile {
+          create
+          view
+          edit
+          isHidden
+      }
+      properties {
+          create
+          view
+          edit
+          isHidden
+
+      }
+      tenants {
+          create
+          view
+          edit
+          isHidden
+
+      }
+      documents {
+          create
+          view
+          edit
+          isHidden
+
+      }
+      messaging {
+        tenants
+        teamMembers
+        isHidden
+      }
+    }   
+  }
+}

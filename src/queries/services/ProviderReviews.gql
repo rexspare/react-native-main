@@ -1,0 +1,19 @@
+query ProviderReviews($id: ID!) {
+  serviceProvider(id: $id) {
+    rank
+    topReviews {
+      edges {
+        node {
+          id
+          rank
+          text
+          reviewer {
+            id
+            fullName
+            picture
+          }
+        }
+      }
+    }
+  }
+}

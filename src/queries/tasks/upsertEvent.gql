@@ -1,0 +1,7 @@
+mutation UpsertEvent($id: ID, $eventData: EventInput!) {
+  upsertEvent(input: {id: $id, eventData: $eventData}) {
+    event {
+      id
+    }
+  }
+}

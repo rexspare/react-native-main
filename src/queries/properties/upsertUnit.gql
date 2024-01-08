@@ -1,0 +1,8 @@
+mutation UpsertUnit($unit: UnitInput!, $id: ID) {
+  upsertUnit(input: {id: $id, unitData: $unit}) {
+    unit {
+      id
+      pk
+    }
+  }
+}

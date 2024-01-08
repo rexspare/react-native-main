@@ -1,0 +1,21 @@
+mutation UploadDocument(
+  $document: Upload!
+  $name: String
+  $folder: ID
+  $isPersonal: Boolean
+  $isBuildingDocument: Boolean
+) {
+  uploadDocument(
+    input: {
+      document: $document
+      name: $name
+      folderId: $folder
+      isPersonal: $isPersonal
+      isBuildingDocument: $isBuildingDocument
+    }
+  ) {
+    document {
+      id
+    }
+  }
+}

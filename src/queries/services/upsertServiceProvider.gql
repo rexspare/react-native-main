@@ -1,0 +1,7 @@
+mutation UpsertServiceProvider($provider: ServiceProviderInput!, $id: ID) {
+  upsertServiceProvider(input: {id: $id, providerData: $provider}) {
+    serviceProvider {
+      id
+    }
+  }
+}

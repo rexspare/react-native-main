@@ -1,0 +1,5 @@
+mutation SetBuildingPhotos($photos: [String]!, $id: ID!) {
+  setBuildingPhotos(input: {id: $id, photos: $photos}) {
+    success
+  }
+}

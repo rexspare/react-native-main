@@ -1,0 +1,73 @@
+#import './taskItemFragment.gql'
+
+query ListTasks(
+  $categoryId: Float
+  $status: String
+  $user: Float
+  $assignee: Float
+  $after: String
+  $first: Int
+  $search: String
+  $overdueDate: DateTime
+  $recentDate: DateTime
+  $dueMin: DateTime
+  $dueMax: DateTime
+  $priority: Float
+  $buildingIds: String
+  $unitIds: String
+) {
+  recentCount:tasks(
+    dueMin: $recentDate
+    after: $after
+    first: $first
+    categoryId: $categoryId
+    status: $status
+    userId: $user
+    assigneesId: $assignee
+    search: $search
+    priority: $priority
+    buildingIds: $buildingIds
+    unitIds: $unitIds
+    ){
+  	totalCount
+  }
+  overdueCount:tasks(
+    dueMax: $overdueDate
+    after: $after
+    first: $first
+    categoryId: $categoryId
+    status: $status
+    userId: $user
+    assigneesId: $assignee
+    search: $search
+    priority: $priority
+    buildingIds: $buildingIds
+    unitIds: $unitIds
+    ){
+  	totalCount
+  }
+  tasks(
+    after: $after
+    first: $first
+    categoryId: $categoryId
+    status: $status
+    userId: $user
+    assigneesId: $assignee
+    search: $search
+    dueMin: $dueMin
+    dueMax: $dueMax
+    priority: $priority
+    buildingIds: $buildingIds
+    unitIds: $unitIds
+  ) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      node {
+        ...TaskItemFragment
+      }
+    }
+  }
+}

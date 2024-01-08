@@ -1,0 +1,9 @@
+mutation UploadLeaseAgreement($id: ID!, $agreement: Upload!) {
+  uploadLeaseAgreement(input: {id: $id, agreementFile: $agreement}) {
+    document {
+      id
+      name
+      url
+    }
+  }
+}

@@ -1,0 +1,23 @@
+query GetPermitDetails($id: ID!) {
+  data: permit(id: $id) {
+    status
+    source
+    idInSupplier
+    weblink
+    issueDate
+    expirationDate
+    jobType
+    building {
+      fullAddress
+      pk
+      id
+      displayName
+      photos(limit: 1)
+    }
+    unit {
+      unitNumber
+      id
+      pk
+    }
+  }
+}

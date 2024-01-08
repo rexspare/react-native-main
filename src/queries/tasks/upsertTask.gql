@@ -1,0 +1,7 @@
+mutation UpsertTask($id: ID, $taskData: TaskInput!) {
+  upsertTask(input: {id: $id, taskData: $taskData}) {
+    task {
+      id
+    }
+  }
+}

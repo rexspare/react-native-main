@@ -1,0 +1,5 @@
+mutation SendWelcomePackage($id: ID!) {
+  sendWelcomePackage(input: {id: $id}) {
+    success
+  }
+}

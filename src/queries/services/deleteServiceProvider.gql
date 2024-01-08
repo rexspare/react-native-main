@@ -1,0 +1,5 @@
+mutation DeleteServiceProvider($id: ID!) {
+  deleteServiceProvider(input: {id: $id}) {
+    success
+  }
+}

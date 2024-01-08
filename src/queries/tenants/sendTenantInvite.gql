@@ -1,0 +1,5 @@
+mutation SendUserInvite ($id: Int!) {
+  sendUserInvite(input: {userPk: $id} ) {
+   success
+  }
+}

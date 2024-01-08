@@ -1,0 +1,14 @@
+#import './notificationFragment.gql'
+query ListUnitNotifications($after: String, $first: Int, $id: ID!) {
+  unitNotifications(id: $id, after: $after, first: $first) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      node {
+        ...NotificationFragment
+      }
+    }
+  }
+}

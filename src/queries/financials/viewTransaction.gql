@@ -1,0 +1,59 @@
+query ViewTransaction($id: ID!) {
+  transaction(id: $id) {
+    id
+    name
+    amount
+    building: buildingRel {
+      id
+      displayName
+      address
+      photos(limit:1)
+    }
+    expense {
+      id
+      serviceProvider {
+        id
+        fullName
+        picture
+        serviceCategory {
+          id
+          name
+          picture
+        }
+      }
+    }
+    unit {
+      id
+      unitNumber
+      photos(limit:1)
+      currentTenants{
+        id
+        fullName
+        picture
+      }
+    }
+    createdAt
+    paymentMethod
+    transactionType
+    description
+    payment { 
+      id
+      amount
+      lease {
+        id
+        tenant{
+          id
+          fullName
+        }
+        unit{
+          id
+          building{
+            id
+            address
+            name
+          }
+        }
+      }        
+      }
+    }
+  }

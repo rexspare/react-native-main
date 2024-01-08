@@ -1,0 +1,93 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  desc "Runs all the tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  lane :bump_version_code do
+    path = '../app/build.gradle'
+    re = /versionCode\s+(\d+)/ 
+  
+    s = File.read(path)
+    versionCode = s[re, 1].to_i
+    s[re, 1] = (versionCode + 1).to_s
+  
+    f = File.new(path, 'w')
+    f.write(s)
+    f.close
+  end
+
+  desc "Submit a new Beta Build to Play Store"
+  lane :beta do
+    store_password = prompt(text: "Signing Store Password: ", secure_text: true)
+    key_password = prompt(text: "Alias Key Password: ", secure_text: true)
+    releaseFilePath = File.join(Dir.pwd, "../app/", "my-upload-key.keystore")
+
+    # Create bundle
+    gradle(task: 'clean')
+    gradle(
+      task: 'bundle',
+      build_type: 'Release',
+      print_command: false,
+      properties: {
+        "android.injected.signing.store.file" => releaseFilePath,
+        "android.injected.signing.store.password" => store_password,
+        "android.injected.signing.key.alias" => "my-key-alias",
+        "android.injected.signing.key.password" => key_password,
+      }
+    )
+    
+    # Upload bundle for testing
+    upload_to_play_store(
+      track: 'internal'
+    )
+  end
+
+  desc "Deploy a new version to the Google Play"
+  lane :deploy do
+    gradle(task: "clean assembleRelease")
+    upload_to_play_store
+  end
+
+  desc "Submit a new Prod Build to Play Store"
+  lane :release do 
+    store_password = prompt(text: "Production Store Password: ", secure_text: true)
+    key_password = prompt(text: "Alias Key Password: ", secure_text: true)
+    releaseFilePath = File.join(Dir.pwd, "../app/", "my-upload-key.keystore")
+
+    # Create bundle
+    gradle(task: 'clean')
+    gradle(
+      task: 'bundle',
+      build_type: 'Release',
+      print_command: false,
+      properties: {
+        "android.injected.production.store.file" => releaseFilePath,
+        "android.injected.production.store.password" => store_password,
+        "android.injected.production.key.alias" => "my-key-alias",
+        "android.injected.production.key.password" => key_password,
+      }
+    )
+
+    upload_to_play_store(
+      track: 'production'
+    )
+  end
+end

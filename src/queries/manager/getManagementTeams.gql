@@ -1,0 +1,23 @@
+query ViewManagementTeams($userId: Int) {
+  managementTeams(userId: $userId) {
+    edges {
+      node {
+        name
+        owner {
+          fullName
+          picture
+          id
+        }
+        members {
+          edges {
+            node {
+              fullName
+              picture
+              id
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+query ListTenants ($creator: Int){
+  getTenantsByCreator(creatorId: $creator){
+    edges{
+      node{
+        fullName
+        firstName
+        lastName
+        id 
+        picture
+        pk
+        
+      }
+    }
+  }
+}

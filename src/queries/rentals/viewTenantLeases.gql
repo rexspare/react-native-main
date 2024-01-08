@@ -1,0 +1,12 @@
+#import './tenantLeaseFragment.gql'
+
+query ViewTenantLease {
+  me {
+    id
+    ... on TenantNode {
+      currentLease {
+        ...TenantLeaseFragment
+      }
+    }
+  }
+}

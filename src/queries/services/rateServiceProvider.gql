@@ -1,0 +1,5 @@
+mutation RateServiceProvider($id: ID!, $rank: Int!, $text: String!) {
+  rateServiceProvider(input: {id: $id, rank: $rank, text: $text}) {
+    success
+  }
+}

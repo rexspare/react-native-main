@@ -1,0 +1,41 @@
+fragment StandardPermissionsFragment on StandardSectionPermissionsNode {
+  create
+  view
+  edit
+  isHidden
+}
+
+fragment PermissionsFragment on UserInterface {
+    userPermissions {
+      tenants {
+        ...StandardPermissionsFragment
+      }
+      financials {
+        ...StandardPermissionsFragment
+      }
+      tasks {
+        ...StandardPermissionsFragment
+      }
+      profile {
+        ...StandardPermissionsFragment
+
+      }
+      properties {
+        ...StandardPermissionsFragment
+
+      }
+      tenants {
+        ...StandardPermissionsFragment
+
+      }
+      documents {
+        ...StandardPermissionsFragment
+
+      }
+      messaging {
+        tenants
+        teamMembers
+        isHidden
+      }
+    }
+}

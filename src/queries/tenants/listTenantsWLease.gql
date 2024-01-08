@@ -1,0 +1,30 @@
+query ListTenantsWLease {
+	tenants {
+		edges {
+			node {
+				id
+				fullName
+				title
+				picture
+				pk
+				latestLease {
+					id
+					start
+					pk
+					unit {
+						unitNumber
+						id
+						pk
+						photos(limit: 1)
+						building {
+							id
+							pk
+							photos(limit: 1)
+							displayName
+						}
+					}
+				}
+			}
+		}
+	}
+}

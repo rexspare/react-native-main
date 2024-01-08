@@ -1,0 +1,14 @@
+query ListTaskCategories {
+  taskCategories {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      node {
+        id
+        name
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+query ViewPayment($id: ID!) {
+  payment(id: $id) {
+        amount
+        amountPaid
+        amountDue
+        due
+        payerPaymentsCount
+        id
+        notes
+        paymentMethod
+        isIncoming
+        unit {
+          unitNumber
+          pk
+          photos(limit:1)
+        }
+        building{
+          photos(limit: 1)
+          pk
+          address
+        }
+        payer {
+          id
+          pk
+          fullName
+          picture
+        }
+        recipient {
+          id
+          pk
+          fullName
+          picture
+        }
+        lease {
+          pk
+          notices(limit: 1){
+            edges{
+              node{
+                id
+                dateSent
+              }
+            }
+          }
+        }
+  }
+}

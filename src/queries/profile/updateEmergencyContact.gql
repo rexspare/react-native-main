@@ -1,0 +1,5 @@
+mutation UpdateEmergencyContact($emergencyData: EmergencyInput!) {
+  updateEmergencyContact(input: {emergencyData: $emergencyData}) {
+    success
+  }
+}

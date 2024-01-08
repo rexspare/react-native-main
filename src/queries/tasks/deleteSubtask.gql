@@ -1,0 +1,5 @@
+mutation DeleteSubtask($input: DeleteSubtaskInput!) {
+  deleteSubtask(input: $input) {
+    success
+  }
+}

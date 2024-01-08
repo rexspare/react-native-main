@@ -1,0 +1,7 @@
+mutation CreateProspectiveTenantLease($application: Upload!) {
+  createProspectiveTenantLease(input: {applicationFile: $application}) {
+    lease {
+      id
+    }
+  }
+}

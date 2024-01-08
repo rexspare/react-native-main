@@ -1,0 +1,19 @@
+query ListLeaseDocuments($id: ID!, $after: String, $first: Int) {
+  lease(id: $id) {
+    id
+    documents(after: $after, first: $first) {
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+      edges {
+        node {
+          id
+          name
+          itemType
+          url
+        }
+      }
+    }
+  }
+}

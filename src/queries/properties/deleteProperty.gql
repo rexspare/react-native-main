@@ -1,0 +1,5 @@
+mutation DeleteProperty($id: ID!) {
+  deleteBuilding(input: {id: $id}) {
+    success
+  }
+}

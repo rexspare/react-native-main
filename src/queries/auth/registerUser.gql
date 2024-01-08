@@ -1,0 +1,5 @@
+mutation register ($data: RegistrationInput!){
+  registerUser(input: {data: $data}) {
+    success
+  }
+}

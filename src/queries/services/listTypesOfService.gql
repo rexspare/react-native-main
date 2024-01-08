@@ -1,0 +1,11 @@
+query ListTypesOfService($subCategories_Isnull: Boolean!){
+  serviceCategories(subCategories_Isnull: $subCategories_Isnull){
+    edges {
+      node {
+        id
+        name
+        svg
+      }
+    }
+  }
+}

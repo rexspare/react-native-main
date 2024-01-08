@@ -1,0 +1,88 @@
+query GetProperty($id: ID!) {
+  building(id: $id) {
+    id
+    pk
+    displayName
+    name
+    address
+    city
+    state
+    floors
+    zip
+    photos
+    propertyType
+    neighbourhood
+    managementCompany {
+      id
+      name
+    }
+    managementTeam {
+      members {
+        id
+        pk
+      }
+    }
+    automatedData {
+      bble
+      boro
+      block
+      bin
+      numberOfFloors
+      stories
+      lot
+      owner
+      bldgcl
+      taxclass
+      ltfront
+      neighborhood
+      ltdepth
+      fullval
+      avland
+      avtot
+      exland
+      extot
+      staddr
+      bldfront
+      bldfront
+      blddepth
+      avland2
+      avtot2
+      period
+      year
+      valtype
+    }
+    owners {
+      edges {
+        node {
+          id
+          fullName
+          title
+          picture
+          phone
+        }
+      }
+    }
+    amenities {
+      edges {
+        node {
+          id
+          name
+        }
+      }
+    }
+    maxFar
+    far
+    activityFeed {
+      pk
+    }
+    listedUnits: units(status: "1") {
+      edgeCount
+    }
+    vacantUnits: units(status: "2") {
+      edgeCount
+    }
+    occupiedUnits: units(status: "3") {
+      edgeCount
+    }
+  }
+}

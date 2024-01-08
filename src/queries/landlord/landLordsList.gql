@@ -1,0 +1,32 @@
+query ListLandlords(
+  $before: String
+  $after: String
+  $first: Int
+  $last: Int
+  $email_Iexact: String
+  $firstName_Icontains: String
+  $lastName_Icontains: String
+) {
+  landlords(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    email_Iexact: $email_Iexact
+    firstName_Icontains: $firstName_Icontains
+    lastName_Icontains: $lastName_Icontains
+  ) {
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    edges {
+      node {
+        id
+        fullName
+        picture
+        pk
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1007164984977-3h006pgtnvorfhda5i55eq9fj8olj6b4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1007164984977-3h006pgtnvorfhda5i55eq9fj8olj6b4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAg7GQRBvHFcoMCOSCkPkqDYGMnXfgOC0c</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1007164984977</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.genie.pm</string>
+	<key>PROJECT_ID</key>
+	<string>property-management-266511</string>
+	<key>STORAGE_BUCKET</key>
+	<string>property-management-266511.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1007164984977:ios:24096dcb8c795f42f37930</string>
+	<key>DATABASE_URL</key>
+	<string>https://property-management-266511.firebaseio.com</string>
+</dict>
+</plist>

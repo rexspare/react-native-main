@@ -1,0 +1,28 @@
+#import './tenantLeaseFragment.gql'
+
+query ListPendingLeases($after: String, $first: Int) {
+  me {
+    id
+    ... on TenantNode {
+      pendingLeases(after: $after, first: $first) {
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+        edges {
+          node {
+            ...TenantLeaseFragment
+            unit {
+              id
+              owner {
+                id
+                fullName
+                picture
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
